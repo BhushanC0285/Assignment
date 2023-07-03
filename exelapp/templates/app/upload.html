@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excel Upload</title>
+</head>
+<body>
+    <h1>Upload Excel File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} <!-- Add this line if you're using Django's CSRF protection -->
+        <input type="file" name="excel_file" accept=".xlsx, .xls">
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <a href="{% url 'download_excel' %}">Download Excel</a>
+
+</body>
+</html>
